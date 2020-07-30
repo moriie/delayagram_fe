@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
-const Login = () => {
+const Signup = () => {
 
     const [identity, setIdentity] = useState('')
     const [password, setPassword] = useState('')
@@ -14,18 +14,18 @@ const Login = () => {
         
     }
 
-    return <LoginBlock onSubmit={(e)=>handleOnSubmit(e)}>
+    return <SignupBlock onSubmit={(e)=>handleOnSubmit(e)}>
         <IdentityInput value={identity} onChange={e=>setIdentity(e.target.value)}></IdentityInput><br/>
         <PasswordInput value={password} type='password' onChange={e=>setPassword(e.target.value)}></PasswordInput><br/>
         <Submit type="submit">Login</Submit>
-    </LoginBlock>
+    </SignupBlock>
 }
 
-export default Login
+export default Signup
 
 //styles
 
-const LoginBlock = styled.form`
+const SignupBlock = styled.form`
     width: 20%;
     height: 40vh;
     margin: 30vh auto;
@@ -43,9 +43,5 @@ const PasswordInput = styled.input`
 `
 
 const Submit = styled.button`
-
-`
-
-const Signup = styled.button`
 
 `

@@ -3,13 +3,15 @@ import styled from 'styled-components'
 
 const Home = () => {
 
-    return
-        <Splash>
-            
-        </Splash>
+    return <Splash>
+        <p>sample text</p>
+    </Splash>
 }
+
+export default Home
 
 //styles
 
 const Splash = styled.div`
+    background-color: rgb(250, 250, 250);
 `

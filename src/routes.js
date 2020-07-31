@@ -3,15 +3,17 @@ import React from 'react'
 
 import Login from './Login/login'
 import Signup from './Signup/signup'
+import Home from './Home/home'
 
-export const Routes = () => {
+const Routes = () => {
 
-    return 
-        <Router>
-            <Switch>
-                <Route path="/login" component={Login}/>
-                <Route path="/signup" component={Signup}/>
-            </Switch>
-        </Router>
+    return <Router>
+        <Switch>
+            <Route path="/" component={Home}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/signup" component={Signup}/>
+        </Switch>
+    </Router>
 }
 
+export default Routes

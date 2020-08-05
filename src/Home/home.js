@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -6,8 +6,10 @@ import Login from '../Login/login'
 
 const Home = () => {
 
-    return <Splash>
-        <Login/>
+    return <Fragment>
+        <Splash>
+            <Login/>
+        </Splash>
         <Footer>
             <Link to="/about">ABOUT</Link>
             <Link to="/help">HELP</Link>
@@ -21,7 +23,7 @@ const Home = () => {
             <Link to="/hashtags">HASHTAGS</Link>
             <Link to="/language">LANGUAGE</Link>
         </Footer>
-    </Splash>
+    </Fragment>
 }
 
 export default Home
@@ -34,17 +36,19 @@ const Splash = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
 `
 
 const Footer = styled.div`
+    position: fixed;
+    bottom: 5vh;
     display: flex;
+    width: 50vw;
+    padding: 0 25vw;
     font-size: 12px;
-    margin: 0 25vw;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
 
     a {
         text-decoration: none;

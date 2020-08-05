@@ -30,7 +30,6 @@ const LoginBlock = styled.form`
     width: 20%;
     height: 40vh;
     border: 1px solid black;
-    align-self: center;
 `
 
 const IdentityInput = styled.input`

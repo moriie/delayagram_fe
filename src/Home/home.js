@@ -2,9 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+import Login from '../Login/login'
+
 const Home = () => {
 
     return <Splash>
+        <Login/>
         <Footer>
             <Link to="/about">ABOUT</Link>
             <Link to="/help">HELP</Link>
@@ -29,12 +32,22 @@ const Splash = styled.div`
     background-color: rgb(250, 250, 250);
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
 `
 
 const Footer = styled.div`
     display: flex;
-    /* font-size: 12px; ---FIX LATER--- */
-    margin: 0 20vw;
+    font-size: 12px;
+    margin: 0 25vw;
     flex-direction: row;
     justify-content: space-between;
+    align-items: stretch;
+
+    a {
+        text-decoration: none;
+        color: gray;
+    }
 `

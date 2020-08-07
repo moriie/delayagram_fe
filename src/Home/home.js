@@ -1,14 +1,23 @@
-import React, { Fragment } from 'react'
+import React, { useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Login from '../Login/login'
+import Signup from '../Signup/signup'
+import LoginToggler from '../LoginToggler/logintoggler'
 
 const Home = () => {
 
+    const [pageState, setPagestate] = useState(true)
+
+    const BlockManager = () => {
+        return pageState ? <Login/> : <Signup/>
+    }
+
     return <Fragment>
         <Splash>
-            <Login/>
+            {BlockManager()}
+            <LoginToggler/>
         </Splash>
         <Footer>
             <Link to="/about">ABOUT</Link>

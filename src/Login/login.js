@@ -28,8 +28,9 @@ export default Login
 
 const LoginBlock = styled.form`
     width: 20%;
-    height: 40vh;
+    height: 40%;
     border: 1px solid black;
+    margin: 10px 0;
 `
 
 const IdentityInput = styled.input`

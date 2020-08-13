@@ -16,8 +16,8 @@ const Login = () => {
 
     return <LoginBlock onSubmit={(e)=>handleOnSubmit(e)}>
         <LogoPlaceholder>Delayagram</LogoPlaceholder>
-        <IdentityInput placeholder={"Phone number, username, or email"} value={identity} onChange={e=>setIdentity(e.target.value)}></IdentityInput><br/>
-        <IdentityInput placeholder={"Password"} value={password} type='password' onChange={e=>setPassword(e.target.value)}></IdentityInput><br/>
+        <Input placeholder={"Phone number, username, or email"} value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
+        <Input placeholder={"Password"} value={password} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
         <Submit type="submit">Log In</Submit>
     </LoginBlock>
 }
@@ -33,7 +33,7 @@ const LoginBlock = styled.form`
     margin: 10px 0;
 `
 
-const IdentityInput = styled.input`
+const Input = styled.input`
     border: 1px solid black;
     border-radius: 3px;
     font-size: 12px;

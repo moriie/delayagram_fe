@@ -16,7 +16,7 @@ const Home = () => {
 
     return <Fragment>
         <Splash>
-            {BlockManager()}
+            {/* {BlockManager()} */}
             <LoginToggler/>
         </Splash>
         <Footer>

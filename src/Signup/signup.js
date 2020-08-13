@@ -39,6 +39,10 @@ const SignupBlock = styled.form`
 const Input = styled.input`
     border: 1px solid black;
     border-radius: 3px;
+    font-size: 12px;
+    width: 75%;
+    height: 7.5%;
+    margin-bottom: 2.5%;
 `
 
 const Submit = styled.button`

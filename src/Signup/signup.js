@@ -20,10 +20,10 @@ const Signup = () => {
     return <Fragment>
         <SignupBlock onSubmit={(e)=>handleOnSubmit(e)}>
             <LogoPlaceholder>Delayagram</LogoPlaceholder>
-            <Input value={contact} onChange={e=>setContact(e.target.value)}></Input>
-            <Input value={fullname} onChange={e=>setFullname(e.target.value)}></Input>
-            <Input value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
-            <Input value={password} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
+            <Input value={contact} placeholder={"Mobile Number or Email"} onChange={e=>setContact(e.target.value)}></Input>
+            <Input value={fullname} placeholder={"Full Name"} onChange={e=>setFullname(e.target.value)}></Input>
+            <Input value={identity} placeholder={"Username"} onChange={e=>setIdentity(e.target.value)}></Input><br/>
+            <Input value={password} placeholder={"Password"} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
             <Submit type="submit">Sign Up</Submit>
         </SignupBlock>
         <LoginToggler loginstate={false}/>

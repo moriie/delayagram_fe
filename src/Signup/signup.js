@@ -19,6 +19,7 @@ const Signup = () => {
 
     return <Fragment>
         <SignupBlock onSubmit={(e)=>handleOnSubmit(e)}>
+            <LogoPlaceholder>Delayagram</LogoPlaceholder>
             <Input value={contact} onChange={e=>setContact(e.target.value)}></Input>
             <Input value={fullname} onChange={e=>setFullname(e.target.value)}></Input>
             <Input value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
@@ -35,8 +36,8 @@ export default Signup
 
 const SignupBlock = styled.form`
     width: 20%;
-    height: 40vh;
-    margin: 30vh auto;
+    height: 40%;
+    margin: 10px 0;
     border: 1px solid black;
 `
 
@@ -49,6 +50,18 @@ const Input = styled.input`
     margin-bottom: 2.5%;
 `
 
-const Submit = styled.button`
+const LogoPlaceholder = styled.p`
+    font-size: 28px;
+`
 
+const Submit = styled.button`
+    border: none;
+    border-radius: 3px;
+    background-color: #63C7EC;
+    color: white;
+    width: 75%;
+
+    &:hover {
+        background-color: #5AB0D0;
+    }
 `

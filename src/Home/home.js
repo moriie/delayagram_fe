@@ -1,24 +1,20 @@
 import React, { useState, Fragment } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Login from '../Login/login'
 import Signup from '../Signup/signup'
-import LoginToggler from '../LoginToggler/logintoggler'
 
 const Home = () => {
 
-    // const [pageState, setPagestate] = useState(true)
-
-    // const BlockManager = () => {
-    //     return pageState ? <Login/> : <Signup/>
-    // }
 
     return <Fragment>
         <Splash>
-            {/* {BlockManager()} */}
-            <Login/>
-            {/* <LoginToggler/> */}
+            <Router>
+                <Route path="/signup" component={Signup}/>
+                <Route path="/login" component={Login}/>
+            </Router>
         </Splash>
         <Footer>
             <Link to="/about">ABOUT</Link>

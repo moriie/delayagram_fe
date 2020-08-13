@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, Fragment} from 'react'
 import styled from 'styled-components'
+
+import LoginToggler from '../LoginToggler/logintoggler'
 
 const Login = () => {
 
@@ -14,12 +16,15 @@ const Login = () => {
         
     }
 
-    return <LoginBlock onSubmit={(e)=>handleOnSubmit(e)}>
-        <LogoPlaceholder>Delayagram</LogoPlaceholder>
-        <Input placeholder={"Phone number, username, or email"} value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
-        <Input placeholder={"Password"} value={password} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
-        <Submit type="submit">Log In</Submit>
-    </LoginBlock>
+    return <Fragment>
+        <LoginBlock onSubmit={(e)=>handleOnSubmit(e)}>
+            <LogoPlaceholder>Delayagram</LogoPlaceholder>
+            <Input placeholder={"Phone number, username, or email"} value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
+            <Input placeholder={"Password"} value={password} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
+            <Submit type="submit">Log In</Submit>
+        </LoginBlock>
+        <LoginToggler loginstate={true}/>
+    </Fragment>
 }
 
 export default Login

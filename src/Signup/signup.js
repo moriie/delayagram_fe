@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, Fragment} from 'react'
 import styled from 'styled-components'
+import LoginToggler from '../LoginToggler/logintoggler'
 
 const Signup = () => {
 
@@ -16,13 +17,16 @@ const Signup = () => {
         
     }
 
-    return <SignupBlock onSubmit={(e)=>handleOnSubmit(e)}>
-        <Input value={contact} onChange={e=>setContact(e.target.value)}></Input>
-        <Input value={fullname} onChange={e=>setFullname(e.target.value)}></Input>
-        <Input value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
-        <Input value={password} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
-        <Submit type="submit">Sign Up</Submit>
-    </SignupBlock>
+    return <Fragment>
+        <SignupBlock onSubmit={(e)=>handleOnSubmit(e)}>
+            <Input value={contact} onChange={e=>setContact(e.target.value)}></Input>
+            <Input value={fullname} onChange={e=>setFullname(e.target.value)}></Input>
+            <Input value={identity} onChange={e=>setIdentity(e.target.value)}></Input><br/>
+            <Input value={password} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
+            <Submit type="submit">Sign Up</Submit>
+        </SignupBlock>
+        <LoginToggler loginstate={false}/>
+    </Fragment>
 }
 
 export default Signup

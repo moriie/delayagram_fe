@@ -8,16 +8,17 @@ import LoginToggler from '../LoginToggler/logintoggler'
 
 const Home = () => {
 
-    const [pageState, setPagestate] = useState(true)
+    // const [pageState, setPagestate] = useState(true)
 
-    const BlockManager = () => {
-        return pageState ? <Login/> : <Signup/>
-    }
+    // const BlockManager = () => {
+    //     return pageState ? <Login/> : <Signup/>
+    // }
 
     return <Fragment>
         <Splash>
             {/* {BlockManager()} */}
-            <LoginToggler/>
+            <Login/>
+            {/* <LoginToggler/> */}
         </Splash>
         <Footer>
             <Link to="/about">ABOUT</Link>

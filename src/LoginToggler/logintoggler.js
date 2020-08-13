@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const LoginToggler = () => {
+const LoginToggler = (props) => {
 
-    const [loginState, setLoginState] = useState(false)
+    const LinkHandler = () => {
+        if (props.loginstate){
+            return <p>Don't Have An Account? <Link to='/signup'>Sign Up</Link></p>
+        }
+        else{
+            return <p>Have an account? <Link to='/login'>Log in</Link></p>
+        }
+    }
 
     return <ToggleBlock>
-        <p>Don't Have An Account? <Link to='/signup'>Sign Up</Link></p>
+        {LinkHandler()}
     </ToggleBlock>
 }
 

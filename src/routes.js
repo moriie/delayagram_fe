@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 
-import Home from './Home/home'
+import Signup from './Signup/signup'
+import Login from './Login/login'
+import FrontPage from './FrontPage/frontpage'
+import Footer from './Footer/footer'
 
 const Routes = () => {
 
@@ -9,8 +12,9 @@ const Routes = () => {
         <Switch>
             <Route path="/signup" component={Signup}/>
             <Route path="/login" component={Login}/>
-            <Route path="/" component={Home}/>
+            <Route path="/" component={FrontPage}/>
         </Switch>
+        <Footer />
     </Router>
 }
 

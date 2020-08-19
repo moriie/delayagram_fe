@@ -14,6 +14,7 @@ const Home = () => {
             <Router>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
+                
             </Router>
         </Splash>
         <Footer>

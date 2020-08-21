@@ -5,16 +5,30 @@ import LoginToggler from '../LoginToggler/logintoggler'
 const Signup = () => {
 
     const [contact, setContact] = useState('')
-    const [identity, setIdentity] = useState('')
+    const [username, setUsername] = useState('')
     const [fullname, setFullname] = useState('')
     const [password, setPassword] = useState('')
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        console.log(identity)
-        console.log(password)
-
         
+        fetch('http://127.0.0.1:8000/api/user/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                "username": username,
+                "password": password,
+                "email": contact,
+                "full_name": fullname,
+            })
+        })
+        .then(res=>res.json())
+        .then(json=>console.log(json))
+
+        console.log("check")        
     }
 
     return <Fragment>
@@ -22,7 +36,7 @@ const Signup = () => {
             <LogoPlaceholder>Delayagram</LogoPlaceholder>
             <Input value={contact} placeholder={"Mobile Number or Email"} onChange={e=>setContact(e.target.value)}></Input>
             <Input value={fullname} placeholder={"Full Name"} onChange={e=>setFullname(e.target.value)}></Input>
-            <Input value={identity} placeholder={"Username"} onChange={e=>setIdentity(e.target.value)}></Input><br/>
+            <Input value={username} placeholder={"Username"} onChange={e=>setUsername(e.target.value)}></Input><br/>
             <Input value={password} placeholder={"Password"} type='password' onChange={e=>setPassword(e.target.value)}></Input><br/>
             <Submit type="submit">Sign Up</Submit>
         </SignupBlock>

@@ -10,9 +10,19 @@ const Login = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        console.log(identity)
-        console.log(password)
-
+        
+        fetch('http://localhost:8000/api/user/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                "identity": identity,
+                "password": password
+            })
+        })
+        .then()
         
     }
 
